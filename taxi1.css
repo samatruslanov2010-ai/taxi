@@ -1,0 +1,1126 @@
+/* =============================================
+   БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ
+   ============================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1a73e8;
+    --primary-dark: #174ea6;
+    --bg-light: #f8f9fa;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --border-color: #dadce0;
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+    --card-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =============================================
+   HEADER
+   ============================================= */
+
+.header {
+    background: linear-gradient(135deg, #1a73e8 0%, #174ea6 100%);
+    color: white;
+    padding: 40px 0;
+    margin-bottom: 40px;
+    box-shadow: var(--card-shadow);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-titles {
+    text-align: left;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.tagline {
+    font-size: 16px;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+/* Кнопка регистрации в шапке */
+.header-register-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: var(--primary-color);
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    position: relative;
+    top: -8px;
+}
+
+.header-register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+/* =============================================
+   MODE SWITCHER / TABS
+   ============================================= */
+
+.mode-switcher {
+    background-color: var(--bg-light);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.mode-tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.mode-btn {
+    padding: 12px 24px;
+    border: 2px solid var(--border-color);
+    background-color: white;
+    color: var(--text-secondary);
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.mode-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.mode-btn.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: var(--card-shadow);
+}
+
+/* =============================================
+   ROLE SWITCHER (Главные переключатели)
+   ============================================= */
+
+.role-switcher {
+    background: linear-gradient(135deg, #f0f4ff 0%, #f8f9ff 100%);
+    padding: 30px 0;
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    box-shadow: var(--card-shadow);
+}
+
+.role-tabs {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.role-btn {
+    padding: 14px 40px;
+    border: 2px solid var(--border-color);
+    background-color: white;
+    color: var(--text-secondary);
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: var(--card-shadow);
+}
+
+.role-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.role-btn.active {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-2px);
+}
+
+/* =============================================
+   TAXI TYPE FILTER (для клиента)
+   ============================================= */
+
+.taxi-type-filter {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+}
+
+.taxi-type-filter label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.type-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.type-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid var(--border-color);
+    background-color: white;
+    color: var(--text-secondary);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.type-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.type-btn.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* =============================================
+   SECTION VISIBILITY
+   ============================================= */
+
+.section-visible {
+    display: block;
+}
+
+/* =============================================
+   SECTIONS (Client & Driver)
+   ============================================= */
+
+.client-section,
+.driver-section {
+    padding: 40px 0;
+}
+
+.client-section.section-visible {
+    display: block !important;
+}
+
+.driver-section.section-visible {
+    display: block !important;
+}
+
+/* =============================================
+   FILTERS SECTION
+   ============================================= */
+
+.filters-section {
+    background-color: var(--bg-light);
+    padding: 40px 0;
+    margin-bottom: 40px;
+    border-radius: 12px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+    align-items: start;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group--wide {
+    grid-column: 1 / -1;
+}
+
+.filter-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-input {
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: white;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.filter-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.filter-input::placeholder {
+    color: #9aa0a6;
+}
+
+.filter-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.search-btn {
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--card-shadow);
+}
+
+.search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.search-btn:active {
+    transform: translateY(0);
+}
+
+.driver-image-preview {
+    width: 480px;
+    /* ширина */
+    height: 220px;
+    /* высота */
+    margin-top: 12px;
+
+    border: 2px dashed var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8f9fa;
+
+    color: #777;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+}
+
+.driver-image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.driver-image-preview.compact-preview {
+    min-height: 90px;
+    padding: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.driver-face-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.driver-face-panel {
+    display: grid;
+    grid-template-columns: minmax(120px, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+}
+
+.face-options {
+    display: grid;
+    gap: 14px;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: #fcfdff;
+}
+
+.camera-controls input[type="file"] {
+    display: none;
+}
+
+.camera-mode-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.camera-mode-btn {
+    border: 1px solid var(--border-color);
+    background: white;
+    color: var(--text-secondary);
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.camera-mode-btn.active,
+.camera-mode-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: #eef4ff;
+}
+
+.camera-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.camera-actions--simple {
+    justify-content: space-between;
+}
+
+.camera-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.camera-overlay-content {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    max-height: 100vh;
+    display: grid;
+    gap: 16px;
+    align-items: center;
+    justify-items: center;
+}
+
+.camera-overlay-video {
+    width: 100%;
+    height: min(80vh, calc(100vh - 140px));
+    border-radius: 20px;
+    object-fit: cover;
+    background: #000;
+}
+
+.camera-guide {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border: 2px dashed rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+}
+
+.camera-guide::before,
+.camera-guide::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.camera-guide::before {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.camera-guide::after {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.camera-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.camera-capture-btn {
+    width: 100%;
+}
+
+.camera-video {
+    width: 100%;
+    max-height: 240px;
+    border-radius: 12px;
+    background: #000;
+    display: none;
+}
+
+.taxi-card-face {
+    margin: 18px 0 0;
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+}
+
+.taxi-card-face img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.taxi-card-face-label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.taxi-card-face-img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* =============================================
+   RESULTS SECTION
+   ============================================= */
+
+.results-section {
+    padding: 40px 0;
+}
+
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+/* =============================================
+   TAXI CARD
+   ============================================= */
+
+.taxi-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.taxi-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-4px);
+}
+
+.taxi-card-image {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, #e8f0fe 0%, #f3f3f3 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    overflow: hidden;
+}
+
+.taxi-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.taxi-card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.taxi-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.taxi-card-type {
+    background: linear-gradient(135deg, #1a73e8 0%, #174ea6 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.taxi-card-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.taxi-card-rating .star {
+    color: #fbbc04;
+}
+
+.taxi-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.taxi-card-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.taxi-card-detail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.taxi-card-detail strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.taxi-card-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.feature-badge {
+    background-color: #e8f0fe;
+    color: var(--primary-color);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.taxi-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.taxi-card-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.taxi-card-price-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.taxi-card-price-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.taxi-card-btn {
+    flex: 1;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.taxi-card-btn:hover {
+    transform: scale(1.02);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.taxi-card-btn:active {
+    transform: scale(0.98);
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+.footer {
+    background-color: var(--bg-light);
+    border-top: 1px solid var(--border-color);
+    padding: 30px 0;
+    margin-top: 60px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* --- Стили для превью лица водителя --- */
+#driverFacePreview {
+    width: 120px;
+    height: 160px;
+    margin-top: 12px;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--bg-light);
+
+    color: #777;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+}
+
+#driverFacePreview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.profile-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: #b6cfc9;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 14px;
+    margin-top: -8px;
+}
+
+.profile-btn:hover {
+    background: #444;
+}
+
+.header-actions {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    position: relative;
+    top: -12px;
+    /* выше */
+    right: -20px;
+    /* правее */
+}
+
+.profile-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.profile-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    position: relative;
+}
+
+.close-profile {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#driverImage,
+#driverFaceImage {
+    display: none;
+}
+
+/* ==========================
+   Окно подробностей
+   ========================== */
+
+.card-modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .55);
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    padding: 20px;
+}
+
+.card-modal-box {
+    background: #fff;
+    width: 700px;
+    max-width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+}
+
+.card-modal-close {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #666;
+}
+
+.card-modal-close:hover {
+    color: black;
+}
+
+.modal-car-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-route {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.modal-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a73e8;
+    margin: 15px 0;
+}
+
+.modal-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.modal-item {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.modal-order-btn {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #1a73e8;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modal-order-btn:hover {
+    background: #174ea6;
+}
+
+.card-modal-box img {
+    max-width: 100%;
+}
+
+.card-modal-box .driver-avatar-mini img,
+.card-modal-box div img {
+    object-fit: cover;
+}
+
+/* =============================================
+   RESPONSIVE DESIGN
+   ============================================= */
+
+@media (max-width: 768px) {
+    .header {
+        padding: 30px 0;
+    }
+
+    /* Мобильный вид для шапки с кнопкой регистрации */
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .header-titles {
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .mode-tabs {
+        flex-wrap: wrap;
+    }
+
+    .mode-btn {
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .filters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .taxi-card-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .taxi-card-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .filters-grid {
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .taxi-card-content {
+        padding: 16px;
+    }
+
+    .taxi-card-title {
+        font-size: 16px;
+    }
+
+    /* ==========================
+   Полная адаптация
+   ========================== */
+
+    @media (max-width: 1200px) {
+        .container {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 992px) {
+
+        .header-container {
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .header-actions {
+            position: static;
+            margin-top: 10px;
+        }
+
+        .filters-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .filters-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .role-tabs {
+            flex-direction: column;
+        }
+
+        .role-btn {
+            width: 100%;
+        }
+
+        .profile-box {
+            width: 90%;
+        }
+
+        .driver-image-preview {
+            height: 180px;
+        }
+    }
+
+    @media (max-width: 480px) {
+
+        .container {
+            padding: 0 12px;
+        }
+
+        .logo {
+            font-size: 28px;
+        }
+
+        .tagline {
+            font-size: 14px;
+        }
+
+        .header-register-btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .profile-btn {
+            width: 40px;
+            height: 40px;
+        }
+
+        .driver-image-preview {
+            height: 150px;
+        }
+
+        #driverFacePreview {
+            width: 100px;
+            height: 140px;
+        }
+    }
+}
